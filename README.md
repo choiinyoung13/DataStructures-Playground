@@ -1,3 +1,3 @@
 # DataStructures-Playground
 
-## Learn-DataStructures with JavaScript
+## ✏ Learn-DataStructures with JavaScript
