@@ -1,5 +1,3 @@
-// 연결리스트 (linkedList)
-
 class LinkedList {
   length = 0
   head = null
@@ -7,6 +5,7 @@ class LinkedList {
   add(value) {
     if (this.head) {
       let current = this.head
+
       while (current.next) {
         current = current.next
       }
@@ -14,21 +13,36 @@ class LinkedList {
     } else {
       this.head = new Node(value)
     }
-    this.length++
-    return this.length
+    return this.length++
+  }
+
+  search(index) {
+    let current = this.head
+
+    let count = 0
+    while (count < index) {
+      current = current?.next
+      count++
+    }
+    return current?.value
   }
 }
 
 class Node {
   next = null
-
   constructor(value) {
     this.value = value
   }
 }
 
-const li = new linkedList()
+const li = new LinkedList()
+
 li.add(1)
 li.add(2)
 li.add(3)
-console.log(li)
+li.add(4)
+
+console.log(li.search(0))
+console.log(li.search(1))
+console.log(li.search(3))
+console.log(li.search(5))
